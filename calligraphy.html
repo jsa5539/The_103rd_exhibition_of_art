@@ -14,17 +14,24 @@
 </head>
 <body>
 
-    <header class="max-w-4xl mx-auto pt-12 px-6 text-center">
-        <div class="inline-block bg-white p-3 poster-shadow mb-10 transform -rotate-1">
-            <img src="poster.png" alt="녹음방초 포스터" class="max-w-full h-auto max-h-[600px]">
-        </div>
+<header class="flex flex-col items-center justify-center max-w-4xl mx-auto pt-12 px-6 text-center">
+    
+    <div class="block bg-white p-3 poster-shadow mb-10 mx-auto">
+        <img src="src/poster.png" alt="녹음방초 포스터" class="max-w-full h-auto max-h-[600px] block">
+    </div>
+
+    <div class="w-full">
         <h1 class="font-serif text-3xl md:text-5xl text-[#7D7268] mb-4">제 103회 단국서예작품전</h1>
-        <p class="text-xl font-serif text-[#7D7268] opacity-90 italic">"녹음방초(綠陰芳草) : 나무가 푸르게 우거진 그늘과 꽃다운 풀"</p>
+        <p class="text-xl font-serif text-[#7D7268] opacity-90 italic">
+            "녹음방초(綠陰芳草) : 나무가 푸르게 우거진 그늘과 꽃다운 풀"
+        </p>
+        
         <div class="mt-6 py-4 border-y border-[#7D7268]/20 inline-block px-10 text-sm md:text-base">
             <p>2026.05.07 — 05.09</p>
             <p>단국대학교 혜당관 2층 로비</p>
         </div>
-    </header>
+    </div>
+</header>
 
     <main class="max-w-6xl mx-auto py-20 px-6">
         <h2 class="font-serif text-2xl mb-10 border-b border-[#7D7268]/30 pb-3 inline-block">작품 목록</h2>
@@ -56,11 +63,26 @@
             © 2026 Dankook Calligraphy Association. All rights reserved.
         </div>
     </footer>
-
+<div id="modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeModal()">
+    <div class="bg-[#F7F4F2] max-w-lg w-full rounded-lg shadow-2xl relative p-8" onclick="event.stopPropagation()">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl">&times;</button>
+        
+        <div class="text-center">
+            <div id="modal-image" class="aspect-[3/4] bg-gray-100 mb-6 flex items-center justify-center text-gray-300 italic rounded">
+                이미지 준비 중
+            </div>
+            <h3 id="modal-title" class="font-serif text-2xl mb-2 text-[#7D7268]"></h3>
+            <p id="modal-artist" class="text-sm text-gray-500 mb-6"></p>
+            <div class="border-t border-gray-200 pt-6 text-left">
+                <p id="modal-desc" class="text-gray-700 leading-relaxed text-sm whitespace-pre-wrap"></p>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         // 엑셀 데이터를 여기에 복사해서 붙여넣으세요
         const workData = [
-            { id: 1, title: "國士無雙", artist: "정연수", note: "娥進" },
+            { id: 1, title: "國士無雙", artist: "정연수", note: "娥進", desc: "작품설명"},
             { id: 2, title: "두존쿠", artist: "백종현", note: " " },
             { id: 3, title: "乙瑛碑 臨書", artist: "손범서", note: "靑江" },
             { id: 4, title: "開花", artist: "신인철", note: " " },
@@ -79,30 +101,49 @@
         ];
 
         const grid = document.getElementById('gallery-grid');
+        const modal = document.getElementById('modal');
+// 2. 카드 생성 루프 (기존 구조에서 onclick 추가)
+    workData.forEach(work => {
+        const card = document.createElement('div');
+        // cursor-pointer를 추가하여 클릭 가능하다는 것을 알려줍니다.
+        card.className = 'bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-pointer';
+        
+        // 클릭 시 팝업 함수 실행
+        card.onclick = () => openModal(work);
 
-        // 카드 생성 루프
-        workData.forEach(work => {
-            const card = document.createElement('div');
-            card.className = 'bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group';
+        card.innerHTML = `
+            <div class="aspect-[3/4] bg-gray-50 flex items-center justify-center relative overflow-hidden">
+                <div class="text-gray-300 italic group-hover:scale-110 transition-transform duration-500">
+                    이미지 준비 중
+                </div>
+            </div>
             
-            card.innerHTML = `
-                <div class="aspect-[3/4] bg-gray-50 flex items-center justify-center relative overflow-hidden">
-                    <div class="text-gray-300 italic group-hover:scale-110 transition-transform duration-500">
-                        이미지 준비 중
-                    </div>
+            <div class="p-5">
+                <span class="text-[10px] tracking-widest text-[#7D7268] uppercase mb-1 block opacity-70">${work.note}</span>
+                <h3 class="font-serif text-xl mb-3 group-hover:text-[#7D7268] transition-colors">${work.title}</h3>
+                <div class="flex justify-between items-end text-sm text-gray-500">
+                    <span>${work.artist}</span>
+                    <span class="text-xs text-gray-300">${work.size || ''}</span>
                 </div>
-                
-                <div class="p-5">
-                    <span class="text-[10px] tracking-widest text-[#7D7268] uppercase mb-1 block opacity-70">${work.note}</span>
-                    <h3 class="font-serif text-xl mb-3 group-hover:text-[#7D7268] transition-colors">${work.title}</h3>
-                    <div class="flex justify-between items-end text-sm text-gray-500">
-                        <span>${work.artist}</span>
-                        <span class="text-xs text-gray-300">${work.size}</span>
-                    </div>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    </script>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    // 3. 팝업 제어 함수
+    function openModal(work) {
+        document.getElementById('modal-title').innerText = work.title;
+        document.getElementById('modal-artist').innerText = `${work.note} ${work.artist}`;
+        document.getElementById('modal-desc').innerText = work.desc || "등록된 작품 설명이 없습니다.";
+        
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // 스크롤 복구
+    }
+</script>
 </body>
 </html>
