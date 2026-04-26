@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제 103회 단국서예작품전 : 녹음방초</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #F7F4F2; color: #2D2926; }
+        .font-serif { font-family: 'Nanum Myeongjo', serif; }
+        .poster-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    </style>
+</head>
+<body>
+
+    <header class="max-w-4xl mx-auto pt-12 px-6 text-center">
+        <div class="inline-block bg-white p-3 poster-shadow mb-10 transform -rotate-1">
+            <img src="poster.png" alt="녹음방초 포스터" class="max-w-full h-auto max-h-[600px]">
+        </div>
+        <h1 class="font-serif text-3xl md:text-5xl text-[#7D7268] mb-4">제 103회 단국서예작품전</h1>
+        <p class="text-xl font-serif text-[#7D7268] opacity-90 italic">"녹음방초(綠陰芳草) : 나무가 푸르게 우거진 그늘과 꽃다운 풀"</p>
+        <div class="mt-6 py-4 border-y border-[#7D7268]/20 inline-block px-10 text-sm md:text-base">
+            <p>2026.05.07 — 05.09</p>
+            <p>단국대학교 혜당관 2층 로비</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-20 px-6">
+        <h2 class="font-serif text-2xl mb-10 border-b border-[#7D7268]/30 pb-3 inline-block">작품 목록</h2>
+        
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-16 px-6">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="font-serif text-2xl text-[#7D7268] mb-6 underline underline-offset-8 decoration-1">관람 안내</h3>
+                <ul class="space-y-4 text-gray-600">
+                    <li><strong class="text-black font-serif">장소 |</strong> 단국대학교 혜당관 2층 로비</li>
+                    <li><strong class="text-black font-serif">품평회 |</strong> 5월 9일 (토요일) 16:00</li>
+                    <li class="text-sm">※ 전시 관람 시간은 학교 운영 시간에 준합니다.</li>
+                </ul>
+            </div>
+            
+            <div class="md:border-l md:pl-12 border-gray-100">
+                <h3 class="font-serif text-2xl text-[#7D7268] mb-6">🅿️ 주차 안내</h3>
+                <div class="bg-[#F7F4F2] p-6 rounded-xl border border-dashed border-[#7D7268]/40 flex flex-col items-center justify-center">
+                    <p class="text-[#7D7268] font-medium text-center">주차 관련 정보는 현재 확인 중입니다.</p>
+                    <p class="text-xs text-gray-400 mt-2 italic">결정되는 대로 공지하겠습니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-20 text-xs text-gray-400">
+            © 2026 Dankook Calligraphy Association. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // 엑셀 데이터를 여기에 복사해서 붙여넣으세요
+        const workData = [
+            { id: 1, title: "國士無雙", artist: "정연수", note: "娥進" },
+            { id: 2, title: "두존쿠", artist: "백종현", note: " " },
+            { id: 3, title: "乙瑛碑 臨書", artist: "손범서", note: "靑江" },
+            { id: 4, title: "開花", artist: "신인철", note: " " },
+            { id: 5, title: "樂天知命", artist: "박지현", note: " "},
+            { id: 6, title: "'벨킨 이야기, 스페이드 여왕' 발췌", artist: "안서영", note: " "},
+            { id: 7, title: "未來", artist: "정승아", note: "山雲"},
+            { id: 8, title: "里仁", artist: "변재영", note: " "},
+            { id: 9, title: "言美卽響美", artist: "강정완", note: "?"},
+            { id: 10, title: "水弗爭先疾而不", artist: "강정완", note: "?"},
+            { id: 11, title: "春興", artist: "강정완", note: "?"},
+            { id: 12, title: "千里鶯啼綠映紅", artist: "최민선", note: "史香"},
+            { id: 13, title: "水村山郭酒旗風", artist: "최민선", note: "史香"},
+            { id: 14, title: "南朝四百八十寺", artist: "최민선", note: "史香"},
+            { id: 15, title: "多少樓臺煙雨中", artist: "최민선", note: "史香"},
+            // 더 많은 데이터를 추가할 수 있습니다.
+        ];
+
+        const grid = document.getElementById('gallery-grid');
+
+        // 카드 생성 루프
+        workData.forEach(work => {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group';
+            
+            card.innerHTML = `
+                <div class="aspect-[3/4] bg-gray-50 flex items-center justify-center relative overflow-hidden">
+                    <div class="text-gray-300 italic group-hover:scale-110 transition-transform duration-500">
+                        이미지 준비 중
+                    </div>
+                </div>
+                
+                <div class="p-5">
+                    <span class="text-[10px] tracking-widest text-[#7D7268] uppercase mb-1 block opacity-70">${work.note}</span>
+                    <h3 class="font-serif text-xl mb-3 group-hover:text-[#7D7268] transition-colors">${work.title}</h3>
+                    <div class="flex justify-between items-end text-sm text-gray-500">
+                        <span>${work.artist}</span>
+                        <span class="text-xs text-gray-300">${work.size}</span>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
