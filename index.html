@@ -17,7 +17,8 @@
 <header class="flex flex-col items-center justify-center max-w-4xl mx-auto pt-12 px-6 text-center">
     
     <div class="block bg-white p-3 poster-shadow mb-10 mx-auto">
-        <img src="src/poster.png" alt="녹음방초 포스터" class="max-w-full h-auto max-h-[600px] block">
+        <img src="src/poster.png" alt="녹음방초 포스터" class="max-w-full h-auto max-h-[600px] block"> 
+        <!--포스터 사진위치-->
     </div>
 
     <div class="w-full">
@@ -60,17 +61,18 @@
             </div>
         </div>
         <div class="text-center mt-20 text-xs text-gray-400">
-            © 2026 Dankook Calligraphy Association. All rights reserved.
+            2026 Dankook Calligraphy Club. All rights reserved. This page was made by Gemini.
         </div>
     </footer>
 <div id="modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeModal()">
-    <div class="bg-[#F7F4F2] max-w-md w-full rounded-lg shadow-2xl relative p-8" onclick="event.stopPropagation()">
-        //크기 변경해야함
-        
+    <div class="bg-[#F7F4F2] max-w-[320px] w-full rounded-lg shadow-2xl relative p-6" onclick="event.stopPropagation()">
         <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl">&times;</button>
+        <!--
+        이미지 크기 설정
+        -->
         
         <div class="text-center">
-            <div id="modal-image" class="aspect-[3/4] bg-gray-100 mb-6 flex items-center justify-center text-gray-300 italic rounded">
+            <div id="modal-image" class="aspect-[3/4] bg-gray-100 mb-3 flex items-center justify-center text-gray-300 italic rounded">
                 이미지 준비 중
             </div>
             <h3 id="modal-title" class="font-serif text-2xl mb-2 text-[#7D7268]"></h3>
@@ -100,14 +102,14 @@
             { id: 14, title: "南朝四百八十寺", artist: "최민선", note: "史香", desc: "남조 시대의 수많은 사찰들"},
             { id: 15, title: "多少樓臺煙雨中", artist: "최민선", note: "史香", desc: "그 많은 누대들이 안개비 속에 잠겨 있다."},
             // 더 많은 데이터를 추가할 수 있습니다.
+            // 추후 csv파일로 유지보수 할 수 있도록 바꿀 예정.
         ];
 
         const grid = document.getElementById('gallery-grid');
         const modal = document.getElementById('modal');
-        // 2. 카드 생성 루프 (기존 구조에서 onclick 추가)
+        // 카드 생성 루프
     workData.forEach(work => {
         const card = document.createElement('div');
-        // cursor-pointer를 추가하여 클릭 가능하다는 것을 알려줍니다.
         card.className = 'bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-pointer';
         
         // 클릭 시 팝업 함수 실행
