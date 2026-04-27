@@ -83,27 +83,27 @@
     <script>
         // 엑셀 데이터를 여기에 복사해서 붙여넣으세요
         const workData = [
-            { id: 1, title: "國士無雙", artist: "정연수", note: "娥進", desc: "작품설명"},
-            { id: 2, title: "두존쿠", artist: "백종현", note: " " },
-            { id: 3, title: "乙瑛碑 臨書", artist: "손범서", note: "靑江" },
-            { id: 4, title: "開花", artist: "신인철", note: " " },
-            { id: 5, title: "樂天知命", artist: "박지현", note: " "},
-            { id: 6, title: "'벨킨 이야기, 스페이드 여왕' 발췌", artist: "안서영", note: " "},
-            { id: 7, title: "未來", artist: "정승아", note: "山雲"},
-            { id: 8, title: "里仁", artist: "변재영", note: " "},
-            { id: 9, title: "言美卽響美", artist: "강정완", note: "?"},
-            { id: 10, title: "水弗爭先疾而不", artist: "강정완", note: "?"},
-            { id: 11, title: "春興", artist: "강정완", note: "?"},
-            { id: 12, title: "千里鶯啼綠映紅", artist: "최민선", note: "史香"},
-            { id: 13, title: "水村山郭酒旗風", artist: "최민선", note: "史香"},
-            { id: 14, title: "南朝四百八十寺", artist: "최민선", note: "史香"},
-            { id: 15, title: "多少樓臺煙雨中", artist: "최민선", note: "史香"},
+            { id: 1, title: "國士無雙", artist: "정연수", note: "娥進", desc: "‘그 나라에서 가장 뛰어난 인물은 둘도 없다.’는 뜻으로, 나라에서 견줄 사람이 없을 정도로 빼어난 선비를 말한다."},
+            { id: 2, title: "두존쿠", artist: "백종현", note: " ", desc: "'한 구절 위로를 구하다.'\n최근 유행했던 두쫀쿠를 발음이 비슷한 한자에 맞추어 나열했습니다."},
+            { id: 3, title: "乙瑛碑 臨書", artist: "손범서", note: "靑江"},
+            { id: 4, title: "開花", artist: "신인철", note: " ", desc: "작디작은 꽃망울이 흐르는 시간을 쫓아 만개에 이르다"},
+            { id: 5, title: "樂天知命", artist: "박지현", note: " ", desc: "하늘의 뜻(천명/운명)을 깨달아 즐기면서 이에 순응하고, 주어진 처지를 편안하게 받아들이는 마음가짐"},
+            { id: 6, title: "'벨킨 이야기, 스페이드 여왕' 발췌", artist: "안서영", note: " ", desc: "알렉산드르 푸시킨의 ”벨킨이야기, 스페이드 여왕“의 문장입니다."},
+            { id: 7, title: "未來", artist: "정승아", note: "山雲", desc: "개인적으로 정말 좋아하는 단어입니다. 활기찬 미래를 향해 다들 앞으로 나가가길 바라는 마음으로 썼습니다."},
+            { id: 8, title: "里仁", artist: "변재영", note: "淸守", desc: "최근 논어를 읽었습니다. 그 중에서도 감명 깊었던 문구를 골랐습니다. 정말 배우는 걸 좋아한다면 어디서나 배울 점을 찾아내겠죠."},
+            { id: 9, title: "言美卽響美", artist: "강정완", note: "玄中"},
+            { id: 10, title: "水弗爭先疾而不", artist: "강정완", note: "玄中"},
+            { id: 11, title: "春興", artist: "강정완", note: "玄中"},
+            { id: 12, title: "千里鶯啼綠映紅", artist: "최민선", note: "史香", desc: "천 리에 꾀꼬리 울고, 푸른 나무 사이로 붉은 꽃이 비친다."},
+            { id: 13, title: "水村山郭酒旗風", artist: "최민선", note: "史香", desc: "물가 마을과 산성 주변에 술집 깃발이 바람에 흔들린다."},
+            { id: 14, title: "南朝四百八十寺", artist: "최민선", note: "史香", desc: "남조 시대의 수많은 사찰들"},
+            { id: 15, title: "多少樓臺煙雨中", artist: "최민선", note: "史香", desc: "그 많은 누대들이 안개비 속에 잠겨 있다."},
             // 더 많은 데이터를 추가할 수 있습니다.
         ];
 
         const grid = document.getElementById('gallery-grid');
         const modal = document.getElementById('modal');
-// 2. 카드 생성 루프 (기존 구조에서 onclick 추가)
+        // 2. 카드 생성 루프 (기존 구조에서 onclick 추가)
     workData.forEach(work => {
         const card = document.createElement('div');
         // cursor-pointer를 추가하여 클릭 가능하다는 것을 알려줍니다.
