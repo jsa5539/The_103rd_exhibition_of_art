@@ -1,4 +1,5 @@
 # The_103rd_exhibition_of_art
-
-This is a web site for the 103rd exhibition of 단국서예회  
-It will be close after the end of the exhibition
+---
+This is a website for the 103rd exhibition of Dankook Calligraphy Club.  
+It will be closed after the exhibition ends.  
+I will update the index.html file to allow the work list to be modified using an Excel file.  
