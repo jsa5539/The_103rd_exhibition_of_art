@@ -102,7 +102,7 @@ Example:
 
 | A | B | C | D | F | G | H |
 |---|---|---|---|---|---|---|
-| 國士無雙 | 정연수 | 我進 | This is the description of the artwork. | 제 103회 | 녹음방초 | 녹음방초에 초대합니다. |
+| Name of the artwork | Artist name | Artist pen name / Ho | This is the description of the artwork. | 제 103회 | 녹음방초 | 녹음방초에 초대합니다. |
 
 ---
 
