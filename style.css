@@ -1,0 +1,14 @@
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #F7F4F2;
+    color: #2D2926;
+}
+
+.font-serif {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.poster-shadow {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
