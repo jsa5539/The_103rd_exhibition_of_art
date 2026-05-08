@@ -26,8 +26,8 @@
             </div>
 
             <div class="p-6 text-center">
-                <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                    <br>리플렛에 오탈자가 존재합니다.<br>
+                <p id="popup-notice-text" class="text-gray-600 text-sm leading-relaxed mb-6">
+                    리플렛에 오탈자가 존재합니다.<br>
                     사이트를 참고하여 감상해 주세요.
                 </p>
             </div>
@@ -41,7 +41,7 @@
     <!-- 상단 포스터 영역 -->
     <header class="flex flex-col items-center justify-center max-w-4xl mx-auto pt-12 px-6 text-center">
         <div class="block bg-white p-3 poster-shadow mb-10 mx-auto">
-            <img src="src/poster.png" alt="녹음방초 포스터" class="max-w-full h-auto max-h-[600px] block">
+            <img id="poster-image" src="src/poster.png" alt="녹음방초 포스터" class="max-w-full h-auto max-h-[600px] block">
         </div>
 
         <div class="w-full">
@@ -54,8 +54,8 @@
             </p>
 
             <div class="mt-6 py-4 border-y border-[#7D7268]/20 inline-block px-10 text-sm md:text-base">
-                <p>2026.05.07 — 05.09</p>
-                <p>단국대학교 혜당관 2층 로비</p>
+                <p id="schedule-text">2026.05.07 — 05.09</p>
+                <p id="venue-text">단국대학교 혜당관 2층 로비</p>
             </div>
         </div>
     </header>
@@ -71,7 +71,7 @@
         </div>
 
         <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <p class="text-gray-500 text-sm">작품 목록을 불러오는 중입니다...</p>
+            <p id="gallery-loading-text" class="text-gray-500 text-sm">작품 목록을 불러오는 중입니다...</p>
         </div>
     </main>
 
@@ -84,27 +84,27 @@
                 </h3>
 
                 <ul class="space-y-4 text-gray-600">
-                    <li><strong class="text-black font-serif">장소 |</strong> 단국대학교 혜당관 2층 로비</li>
-                    <li><strong class="text-black font-serif">품평회 |</strong> 5월 9일 (토요일) 16:00</li>
-                    <li class="text-sm">※ 전시 관람 시간은 학교 운영 시간에 준합니다.</li>
+                    <li><strong class="text-black font-serif">장소 |</strong> <span id="footer-venue-text">단국대학교 혜당관 2층 로비</span></li>
+                    <li><strong class="text-black font-serif">품평회 |</strong> <span id="review-text">5월 9일 (토요일) 16:00</span></li>
+                    <li id="viewing-note" class="text-sm">※ 전시 관람 시간은 학교 운영 시간에 준합니다.</li>
                 </ul>
             </div>
 
             <div class="md:border-l md:pl-12 border-gray-100">
-                <h3 class="font-serif text-2xl text-[#7D7268] mb-6">🅿️ 주차 안내</h3>
+                <h3 id="parking-heading" class="font-serif text-2xl text-[#7D7268] mb-6">🅿️ 주차 안내</h3>
 
                 <div class="bg-[#F7F4F2] p-6 rounded-xl border border-dashed border-[#7D7268]/40 flex flex-col items-center justify-center">
-                    <p class="text-[#7D7268] font-medium text-center">
+                    <p id="parking-status" class="text-[#7D7268] font-medium text-center">
                         주차 관련 정보는 현재 확인 중입니다.
                     </p>
-                    <p class="text-xs text-gray-400 mt-2">
+                    <p id="parking-note" class="text-xs text-gray-400 mt-2">
                         결정되는 대로 공지하겠습니다.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="text-center mt-20 text-xs text-gray-400">
+        <div id="copyright-text" class="text-center mt-20 text-xs text-gray-400">
             2026 Dankook Calligraphy Club. All rights reserved.
         </div>
     </footer>
