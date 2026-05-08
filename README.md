@@ -22,7 +22,7 @@ The website includes:
 - Notice popup
 - Excel-based artwork data management
 
-The artwork list can be modified by editing the `list.xlsx` file.
+The artwork list and some website text can be modified by editing the `list.xlsx` file.
 
 ---
 
@@ -73,6 +73,37 @@ http://localhost:8000
 
 This website can also be published using GitHub Pages.
 
+First, push the project files to GitHub.
+
+```bash
+git add .
+git commit -m "Update exhibition website"
+git push origin main
+```
+
+Then open the repository on GitHub and follow these steps:
+
+```txt
+Settings → Pages → Build and deployment → Source → Deploy from a branch
+```
+
+Set the branch and folder like this:
+
+```txt
+Branch: main
+Folder: /root
+```
+
+Then click `Save`.
+
+After GitHub Pages finishes deployment, the website URL will usually look like this:
+
+```txt
+https://your-github-username.github.io/The_103rd_exhibition_of_art/
+```
+
+If the website does not appear immediately, wait a moment and refresh the page.
+
 ---
 
 ## How to Update Artwork Data
@@ -90,6 +121,9 @@ The Excel file uses the following columns:
 | F | Exhibition round |
 | G | Exhibition name |
 | H | Exhibition message |
+| I | Exhibition schedule |
+| J | Exhibition venue |
+| K | Review meeting information |
 
 ---
 
@@ -100,9 +134,41 @@ Actual artwork data starts from the second row.
 
 Example:
 
-| A | B | C | D | F | G | H |
-|---|---|---|---|---|---|---|
-| Name of the artwork | Artist name | Artist pen name / Ho | This is the description of the artwork. | 제 103회 | 녹음방초 | 녹음방초에 초대합니다. |
+| A | B | C | D | F | G | H | I | J | K |
+|---|---|---|---|---|---|---|---|---|---|
+| Name of the artwork | Artist name | Artist pen name / Ho | This is the description of the artwork. | 제 103회 | 녹음방초 | 녹음방초에 초대합니다. | 2026.05.07 — 05.09 | 단국대학교 혜당관 2층 로비 | 5월 9일 토요일 16:00 |
+
+The website reads the values from `list.xlsx` and applies them to the page title, main title, popup title, popup message, schedule, venue, and review meeting information.
+
+---
+
+## Poster File Rule
+
+The exhibition poster should be placed inside the `src` folder.
+
+The poster file must be named:
+
+```txt
+src/poster.png
+```
+
+Do not change the poster file name unless you also update the image path in `index.html`.
+
+Correct example:
+
+```txt
+src/poster.png
+```
+
+Incorrect examples:
+
+```txt
+src/poster.jpg
+src/poster_103.png
+poster.png
+```
+
+The poster image is displayed at the top of the website.
 
 ---
 
@@ -155,11 +221,13 @@ So, when you add or update images, make sure the image file names match the artw
 - Do not change the file name `list.xlsx`.
 - Do not change the folder name `src`.
 - `script.js` and `style.css` are located in the project root folder.
+- The poster image must be saved as `src/poster.png`.
 - Artwork images should be saved inside the `src` folder.
-- Image files should be saved as `.jpg`.
-- If an image is missing, the website will show `이미지 준비 중`.
+- Artwork image files should be saved as `.jpg`.
+- If an artwork image is missing, the website will show `이미지 준비 중`.
 - If artwork data is changed, refresh the browser to check the updated result.
 - If the Excel file does not load, check whether the website is opened through a local server.
+- Do not commit temporary Excel files such as `~$list.xlsx`.
 
 ---
 
@@ -171,9 +239,3 @@ So, when you add or update images, make sure the image file names match the artw
 - Tailwind CSS
 - SheetJS
 - Excel file data loading
-
----
-
-## Author
-
-Dankook Calligraphy Club
