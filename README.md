@@ -5,7 +5,6 @@ This is a website for the 103rd exhibition of Dankook Calligraphy Club.
 The website introduces the exhibition and displays the list of artworks.  
 Visitors can click each artwork to view its image and description.
 
-This website will be closed after the exhibition ends.
 
 ---
 
