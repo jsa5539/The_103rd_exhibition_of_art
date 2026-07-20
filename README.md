@@ -123,7 +123,11 @@ The Excel file uses the following columns:
 | I | Exhibition schedule |
 | J | Exhibition venue |
 | K | Review meeting information |
-
+| F | Exhibition number |
+| G | Exhibition name |
+| H | A word from the exhibition |
+| I | Exhibition date |
+| J | Exhibition Location |
 ---
 
 ## Excel Data Format
